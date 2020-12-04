@@ -1,0 +1,392 @@
+\input{head.tex}
+\begin{document}
+	\input{title_page.tex}
+	\input{aim_and_variant.tex}
+	\begin{center}
+	\textbf{Хід роботи}\\
+	\end{center}
+
+\begin{Large}
+\textbf{Завдання 1.} 
+\end{Large}
+\begin{large}
+Промоделювати функціональні вимоги до системи, що \\проектується за
+допомогою DFD-діаграми, для чого:\\
+- Ідентифікувати зовнішні об'єкти, що є постачальниками або приймачами\\
+інформації, і види інформації, які циркулюють між системою і
+зовнішніми \\об'єктами;\\
+- Визначити основні функціональні вимоги до системи і представити їх у\\
+вигляді процесів;\\
+- Визначити основні види інформації і представити їх у вигляді потоків\\
+між процесами і зовнішніми об'єктами;\\
+- Задати сховища інформації.\\
+Для побудови DFD-діаграми використовувати інструментальний засіб \\CASE
+Studio 2.\\
+\end{large}
+
+\begin{normalsize}
+\vspace{1mm}
+Я проаналізував предметну область та завдання на обробку данних.Тепер розробляємо можливу діаграму потоків данних.Для побудови DFD замість CASE Srudio 2 я скористуюсь веб сервісом draw.io. Також для коматнішого і структурованого проектування визначимо підсистеми 1,2,3\\
+\newpage
+\begin{figure}[h]% h - here
+\center{\includegraphics[scale=0.7]{source/spisok_types.png}}
+\caption*{Рис 1. Підсистема "Визначення типу списку"}
+\end{figure}
+\begin{figure}[h!]% h - here, ! -  i demand
+\center{\includegraphics[scale=0.8]{source/correction_types.png}}
+\caption*{Рис 2. Підсистема "Визначення типу коррекції"}
+\end{figure}
+\begin{figure}[p]% p - new page
+\center{\includegraphics[scale=0.85]{source/zvit_types.png}}
+\caption*{Рис 3. Підсистема "Визначення типу звіту"}
+\end{figure}
+\newpage
+\begin{figure}[th!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.9]{source/calc_types.png}}
+\caption*{Рис 4. Підсистема "Визначення типу обчислень"}
+\end{figure}
+\begin{figure}[h!]% h - here, ! -  i demand
+\center{\includegraphics[scale=0.55]{source/DFD.png}}
+\caption*{Рис 5. DFD діаграма}
+\end{figure}
+\newpage
+\begin{Large}
+Завдання 2.
+\end{Large}
+\begin{large}
+ Побудувати концептуальну модель (ER-модель), для чого:\\
+- За описом предметної області і поставленому завданню виявити
+необхідний набір сутностей, їх властивості і зв'язки між сутностями;\\
+- Визначити необхідний набір атрибутів для кожної сутності, виділивши
+атрибути що ідентифікують сутність;\\
+- Класифікувати сутності (стрижневі, асоціативні та інші);\\
+- Визначити зв'язки між об'єктами;\\
+- Задати обмеження цілісності;\\
+- Описати отриману ER-модель.\\
+\end{large}
+\linebreak
+\textbf{Сутності:}
+\{Заявки, Клієнти, Нерухомості(квартири), Операції, Регіони\}\\
+\textbf{Стрижневі:}
+Заявки\\
+\begin{figure}[h!]% h - here, ! -  i demand
+\center{\includegraphics[scale=0.55]{source/ER.png}}
+\caption*{Рис 6. ER діаграма}
+\end{figure}\\
+\textbf{Обмеження:}
+phone має тільки цифри, Square>0, Rooms>0, Price>0
+\newpage
+\begin{Large}
+Завдання 3.
+\end{Large}
+\begin{large}
+Отримати реляційну схему з ER-моделі, для чого:\\
+- Побудувати набір необхідних таблиць бази даних;\\
+- Виділити первинні та зовнішні ключі певних таблиць;\\
+- Привести отримані таблиці до третьої нормальної форми.\\
+- Дати математичний опис отриманої моделі з використанням апарату
+реляційної алгебри.\\
+\end{large}
+\linebreak
+Будемо працювати з ER-діаграмою вказаною на Рис.6. На данній діаграмі первинні\\ ключі вказані як PK,а зовнішні ключі вказані як FK.\\
+\linebreak
+Модель належить до третьої нормальної форми тоді і тільки тоді коли модель належить\\ першій і другій нормальній формі та не містить транзитивних зв'язків.Тож, треба\\ перевірити модель на першу та другу нормальну форми.\\
+\linebreak
+Перевірка спроектованої ER-діаграми на першу нормальну форму:\\
+Спроектована мною модель належить до першої нормальної форми,оскільки усі\\ атрибути атомарні і відсутні групи які повторюються.\\
+\linebreak
+Перевірка спроектованої ER-діаграми на другу нормальну форму:\\
+Спроектована мною модель належить до першої нормальної форми,оскільки вона\\ належить першій нормальній формі,що ми довели у раніше, та відсутні неповні\\ функціональні залежності не ключових атрибутів первинного ключа.\\
+\linebreak
+Перевірка спроектованої ER-діаграми на третю нормальну форму:\\
+Спроектована мною модель належить до першої нормальної форми,оскільки вона\\ належить першої та другої нормальної форми,що ми довели у раніше, та кожне\\ не ключове поле безпосередньо залежить вiд ключового поля, тобто нема транзитивних\\ зв'язків.
+\newpage
+\begin{Large}
+Завдання 4.
+\end{Large}
+\begin{large}
+Використовуючи СУБД MS SQL Server створити спроектовану базу даних.
+\end{large}
+\linebreak
+\begin{lstlisting}
+CREATE DATABASE RieltorsDatabase
+
+GO
+CREATE TABLE Operations(
+    id_operation INT IDENTITY PRIMARY KEY,
+    operation_name NVARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Regions(
+    id_region INT IDENTITY PRIMARY KEY,
+    region_name NVARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Clients(
+    id_client INT IDENTITY PRIMARY KEY,
+    client_name NVARCHAR(255) NOT NULL,
+    phone NVARCHAR(15) NOT NULL,
+    CONSTRAINT phone CHECK(phone LIKE '[0123456789]%')
+
+);
+
+CREATE TABLE Flats(
+    id_flat INT IDENTITY PRIMARY KEY,
+    client_owner INT FOREIGN KEY REFERENCES Clients(id_client),
+    region INT FOREIGN KEY REFERENCES Regions(id_region),
+    square FLOAT NOT NULL,
+    rooms INT NOT NULL,
+    floor INT NOT NULL,
+    price FLOAT NOT NULL,
+    CONSTRAINT square CHECK(square>0.0),
+    CONSTRAINT rooms CHECK(rooms>=0),
+    CONSTRAINT price CHECK(price>0.0)
+);
+
+CREATE TABLE Requests(
+    id_request INT IDENTITY PRIMARY KEY,
+    operation INT FOREIGN KEY REFERENCES Operations(id_operation),
+    client_requester INT FOREIGN KEY REFERENCES Clients(id_client),
+    flat INT FOREIGN KEY REFERENCES Flats(id_flat)
+);
+\end{lstlisting}
+\newpage
+\begin{figure}[th!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.9]{source/ER_mssql.png}}
+\caption*{Рис 7. Побудовна ER діаграма у середовищі МSSQL }
+\end{figure}
+\newpage
+\begin{Large}
+Завдання 5.
+\end{Large}
+\begin{large}
+На мові SQL записати вирази для зазначених у варіанті \\
+завдання типів запитів. Перевірити працездатність написаних запитів в\\ інтерактивному режимі.\\
+\end{large}
+\linebreak
+1.1 Створити впорядковані списки:\\
+- ПІБ клієнтів, площа квартир;
+\begin{lstlisting}
+SELECT C.client_name,F.id_flat,F.square
+FROM Flats F INNER JOIN Clients C ON F.client_owner=C.id_client
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.85]{source/1.png}}
+\caption*{Результат виконання}
+\end{figure}
+- Квартири - поверхи (угруповання за кількістю кімнат і по
+поверхах);
+\begin{lstlisting}
+SELECT F.rooms,F.floor,count(*)[кількість таких квартир,що мають дану кількість кімнат та знаходяться на даному поверсі]
+FROM Flats F
+GROUP BY F.rooms,F.floor
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.65]{source/2.png}}
+\caption*{Результат виконання}
+\end{figure}
+1.2 Обчислення:\\
+- Середня ціна трикімнатної квартири;
+\begin{lstlisting}
+SELECT AVG(price)[середня ціна трикімнатної квартири] 
+FROM Flats
+WHERE rooms=3
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.8]{source/3.png}}
+\caption*{Результат виконання}
+\end{figure}
+- Сумарне число заявок по районах міста.
+\begin{lstlisting}
+SELECT F.region,COUNT(F.region)[сумарне число заявок по районах міста]
+FROM Requests R INNER JOIN Flats F ON R.flat=F.id_flat
+GROUP BY F.region
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.8]{source/4.png}}
+\caption*{Результат виконання}
+\end{figure}
+1.3 Корекція:\\
+- Видалення відомостей про виконані заявках;\\
+Початковий стан таблиці:
+\begin{lstlisting}
+SELECT * FROM Requests
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.8]{source/5.png}}
+\caption*{Результат виконання}
+\end{figure}
+Тепер видалимо 3й запит:
+\begin{lstlisting}
+CREATE PROC deleteRequest
+    @id_to_delete INT
+    AS
+        DELETE FROM Requests
+        WHERE id_request = @id_to_delete
+    GO
+GO
+EXEC deleteRequest 3
+GO
+SELECT * FROM Requests
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.8]{source/6.png}}
+\caption*{Результат виконання}
+\end{figure}
+- Зміна ціни квартири заданого клієнта з ХХ на УУ.\\
+Початковий стан таблиці:
+\begin{lstlisting}
+SELECT * FROM Flats
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.7]{source/7.png}}
+\caption*{Результат виконання}
+\end{figure}
+Тепер змінимо ціну 1ї квартири 1го хозяїна квартири з 50000 на 45000:
+\begin{lstlisting}
+CREATE PROC changePrice
+    @id_client INT,
+    @client_flat_id INT,
+    @new_price FLOAT
+    AS
+        UPDATE Flats
+        SET price=@new_price
+        WHERE client_owner=@id_client AND id_flat=@client_flat_id
+     GO
+EXEC changePrice 1,1,45000
+GO
+SELECT * FROM Flats
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.7]{source/8.png}}
+\caption*{Результат виконання}
+\end{figure}
+Можна побачити,що ціна змінилась.\\
+1.4 Звіти виду:\\
+- Координати клієнта на прізвище, по телефону;
+\begin{lstlisting}
+CREATE PROC getClientByName
+    @client_name NVARCHAR(255)
+    AS
+        SELECT * FROM Clients С
+        WHERE С.client_name=@client_name
+    GO 
+EXEC getClientByName "Ума Дурман"
+
+CREATE PROC getClientByPhone
+    @client_phone NVARCHAR(15)
+    AS
+        SELECT * FROM Clients С
+        WHERE С.phone=@client_phone
+    GO 
+EXEC getClientByPhone "380678924433"
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.9]{source/9.png}}
+\caption*{Результати виконання}
+\end{figure}
+- Квартири площею від АА до ВВ в районі вулиці Миру;
+\begin{lstlisting}
+CREATE PROC getFlats
+    @low FLOAT,
+    @high FLOAT,
+    @region INT
+    AS
+        SELECT id_flat
+        FROM Flats
+        WHERE region=@region AND (square BETWEEN @low AND @high)
+    GO
+EXEC getFlats 45.0,200.0,1
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=1]{source/10.png}}
+\caption*{Результат виконання}
+\end{figure}
+- Список квартир; угрупування по районах та кількістю кімнат;
+\begin{lstlisting}
+SELECT region,rooms,COUNT(*)[кількість таких квартир,що мають дану кількість кімнат та знаходяться в одному регіоні]
+FROM Flats
+GROUP BY region,rooms
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.7]{source/11.png}}
+\caption*{Результат виконання}
+\end{figure}
+\newpage
+- Лист клієнтові про знайдений варіант угоди.
+\begin{lstlisting}
+SELECT R.client_requester,F.client_owner
+FROM Requests R INNER JOIN Flats F ON R.flat=F.id_flat
+\end{lstlisting}
+\begin{figure}[h!]% t - top , h -here, ! - i demand
+\center{\includegraphics[scale=0.8]{source/12.png}}
+\caption*{Результат виконання}
+\end{figure}
+В даній системі цим двом клієнтам одсилається лист,що відповідний юзер хоче зробити\\ якусь операцію.
+
+\begin{Large}
+Завдання 6.
+\end{Large}
+\begin{large}
+Реалізувати закінчене додаток, що працює з створеною\\ базою даних.
+Додаток має\\
+- Заносити інформацію в таблиці створеної бази даних;\\
+- Виконувати необхідні дії по модифікації і видалення даних в таблицях\\
+створеної бази даних;\\
+- Підтримувати цілісність бази даних;\\
+- Виконувати запити з варіанта завдання.\\
+\end{large}
+\linebreak
+Ці процедури додають інформацію до створенних таблиць бах данних:
+\begin{lstlisting}
+USE RieltorsDatabase
+GO
+
+CREATE PROC addClient
+    @client_name NVARCHAR(255),
+    @phone NVARCHAR(15)
+    AS
+        INSERT INTO Clients(client_name, phone) VALUES
+        (@client_name,@phone)
+GO
+
+CREATE PROC addFlat
+    @client_id INT,
+    @region_id INT,
+    @square FLOAT,
+    @rooms INT,
+    @floor INT,
+    @price FLOAT
+    AS
+        INSERT INTO Flats(client_owner,region,square,rooms,floor,price) VALUES
+        (@client_id,@region_id,@square,@rooms,@floor,@price)
+GO
+
+CREATE PROC addOperation
+    @operation_name NVARCHAR(50)
+    AS
+        INSERT INTO Operations(operation_name) VALUES
+        (@operation_name)
+GO
+
+CREATE PROC addRegion
+    @region_name NVARCHAR(255)
+    AS
+        INSERT INTO Regions(region_name) VALUES
+        (@region_name)
+GO
+
+CREATE PROC addRequest
+    @operation INT,
+    @client_id INT,
+    @flat INT
+    AS
+        INSERT INTO Requests(operation,client_requester,flat) VALUES
+        (@operation,@client_id,@flat)
+GO
+\end{lstlisting}
+Необхідні дії по модифікації данних в базі данних було реалізовано в завданні 5.\\Цілісність данних була забезпеченна на єтапі створення таблиць в завданні 4.\\Виконання запитів було виконано в інтерактивному режимі в завданні 5.
+
+
+\end{normalsize}
+\end{document}
